@@ -20,7 +20,7 @@ public class ChangeStatus {
 	@DBRef
 	private User userChange;
 	
-	private Date dateChange;
+	private Date dateChangeStatus;
 	
 	private StatusEnum status;
 
@@ -50,10 +50,10 @@ public class ChangeStatus {
 
 	
 	public Date getDateChange() {
-		return dateChange;
+		return dateChangeStatus;
 	}
 	public void setDateChange(Date dateChange) {
-		this.dateChange = dateChange;
+		this.dateChangeStatus = dateChange;
 	}
 
 	
