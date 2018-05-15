@@ -11,14 +11,14 @@ public interface TicketRepository extends MongoRepository<Ticket, String> {
 	
 	Page<Ticket> findByUserIdOrderByDateDesc(Pageable pages, String userId);
 	
-	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingOrderByDateDesc(
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityOrderByDateDesc(
 			String title,
 			String status,
 			String priority,
 			Pageable pages
 			);
 	
-	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndUserIdOrderByDateDesc(
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndUserIdOrderByDateDesc(
 			String title,
 			String status,
 			String priority,
@@ -26,7 +26,7 @@ public interface TicketRepository extends MongoRepository<Ticket, String> {
 			);
 
 	
-	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndAssignedUserOrderByDateDesc(
+	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndAssignedUserOrderByDateDesc(
 			String title,
 			String status,
 			String priority,
