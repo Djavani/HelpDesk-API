@@ -17,20 +17,19 @@ public class JwtUserFactory {
 	
 	// gera um JWT user com base nos dados de um usuario
 	public static JwtUser create(User user) {
-		return new JwtUser(
-				user.getId(),
-				user.getEmail(),
-				user.getPassword(),
-				mapToGrantedAuthorities(user.getProfile())
-				);
-				
-	}
+        return new JwtUser(
+                user.getId(),
+                user.getEmail(),
+                user.getPassword(),
+                mapToGrantedAuthorities(user.getProfile())
+        );
+    }
 	
 	// converte o perfil do usuario em um formato usado no Spring Security
 	private static List<GrantedAuthority> mapToGrantedAuthorities(ProfileEnum profileEnum) {
-		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		authorities.add(new SimpleGrantedAuthority(profileEnum.toString()));
-		return authorities;
+		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>(); 
+		authorities.add(new SimpleGrantedAuthority(profileEnum.toString())); 
+		return   authorities ;
 	}
 
 }
